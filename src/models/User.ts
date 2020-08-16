@@ -15,6 +15,8 @@ type Callback = () => {};
  * @class User
  */
 export class User {
+  events: { [key: string]: Callback[] } = {};
+
   constructor(private data: UserProps) {}
 
   /**
