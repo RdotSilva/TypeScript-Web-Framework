@@ -37,4 +37,16 @@ export class User {
   set(update: UserProps): void {
     Object.assign(this.data, update);
   }
+
+  /**
+   * Add a Callback function to an event
+   * @param {string} eventName - Event name to update
+   * @param {Callback} callback - Callback function to add to event
+   * @memberof User
+   */
+  on(eventName: string, callback: Callback): void {
+    const handlers = this.events[eventName] || [];
+    handlers.push(callback);
+    this.events[eventName] = handlers;
+  }
 }
