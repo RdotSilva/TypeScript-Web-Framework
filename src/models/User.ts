@@ -7,6 +7,8 @@ interface UserProps {
   age?: number;
 }
 
+type Callback = () => {};
+
 /**
  * Class that represents a User
  * @export
