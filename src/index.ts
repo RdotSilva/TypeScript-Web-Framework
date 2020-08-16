@@ -7,6 +7,8 @@ user.on("change", () => {});
 user.on("change", () => {});
 user.on("click", () => {});
 
+// TODO: Add test case to test event triggering method
+
 // Here we can update each piece of data individually
 // This is allowed because we added a ? to the UserProps interface to make them optional.
 user.set({ name: "NewRyan" });
