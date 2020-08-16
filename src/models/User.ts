@@ -7,7 +7,7 @@ interface UserProps {
   age?: number;
 }
 
-type Callback = () => {};
+type Callback = () => void;
 
 /**
  * Class that represents a User
