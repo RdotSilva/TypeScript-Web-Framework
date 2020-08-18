@@ -3,8 +3,16 @@ import axios from "axios";
 
 const user = new User({ name: "Ryan", age: 34 });
 
+// Create new user with id
 const userWithId = new User({ id: 1 });
-userWithId.fetch();
+
+// Update existing user (testing put request)
+userWithId.set({ name: "Tom", age: 20 });
+userWithId.save();
+
+// Create new user without id
+const userWithoutId = new User({ name: "New User", age: 0 });
+userWithoutId.save();
 
 // Testing the on method to add event callbacks
 user.on("change", () => {
@@ -31,10 +39,10 @@ user.trigger("save");
 user.trigger("");
 
 // Add a user
-axios.post("http://localhost:3000/users", {
-  name: "Ryan",
-  age: 34,
-});
+// axios.post("http://localhost:3000/users", {
+//   name: "Ryan",
+//   age: 34,
+// });
 
 // Get a user
-axios.get("http://localhost:3000/1");
+// axios.get("http://localhost:3000/1");
