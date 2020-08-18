@@ -3,6 +3,9 @@ import axios from "axios";
 
 const user = new User({ name: "Ryan", age: 34 });
 
+const userWithId = new User({ id: 1 });
+userWithId.fetch();
+
 // Testing the on method to add event callbacks
 user.on("change", () => {
   console.log("Change #1");
