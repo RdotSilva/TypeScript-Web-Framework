@@ -1,4 +1,5 @@
 import { User } from "./models/User";
+import axios from "axios";
 
 const user = new User({ name: "Ryan", age: 34 });
 
@@ -25,3 +26,12 @@ console.log(user.get("age"));
 user.trigger("change");
 user.trigger("save");
 user.trigger("");
+
+// Add a user
+axios.post("http://localhost:3000/users", {
+  name: "Ryan",
+  age: 34,
+});
+
+// Get a user
+axios.get("http://localhost:3000/1");
