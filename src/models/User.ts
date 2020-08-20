@@ -4,7 +4,7 @@ import { Eventing } from "./Eventing";
  * Interface listing the properties that a user should have
  * @interface UserProps
  */
-interface UserProps {
+export interface UserProps {
   id?: number;
   name?: string;
   age?: number;
