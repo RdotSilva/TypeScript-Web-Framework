@@ -10,6 +10,14 @@ Client-side web framework built using TypeScript. The framework will allow users
 npm install
 ```
 
+## Running the application
+
+1. Run the parcel command in terminal
+
+```
+parcel index.html
+```
+
 ## Built With
 
 - Typescript
