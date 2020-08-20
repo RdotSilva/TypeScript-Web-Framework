@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { Eventing } from "./Eventing";
 
 /**
  * Interface listing the properties that a user should have
@@ -16,6 +17,8 @@ interface UserProps {
  * @class User
  */
 export class User {
+  public events: Eventing = new Eventing();
+
   constructor(private data: UserProps) {}
 
   /**
