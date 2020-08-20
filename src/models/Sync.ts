@@ -12,14 +12,13 @@ export class Sync {
       });
   }
 
-  save(): void {
-    const id = this.get("id");
+  save(data: UserProps): void {
+    const { id } = data;
 
     if (id) {
-      axios.put(`${this.rootUrl}/${id}`, this.data);
+      axios.put(`${this.rootUrl}/${id}`, data);
     } else {
-      axios.post(this.rootUrl, this.data);
+      axios.post(this.rootUrl, data);
     }
   }
 }
-d;
