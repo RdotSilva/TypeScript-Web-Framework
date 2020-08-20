@@ -15,13 +15,13 @@ const userWithoutId = new User({ name: "New User", age: 0 });
 userWithoutId.save();
 
 // Testing the on method to add event callbacks
-user.on("change", () => {
+user.events.on("change", () => {
   console.log("Change #1");
 });
-user.on("change", () => {
+user.events.on("change", () => {
   console.log("Change #2");
 });
-user.on("click", () => {
+user.events.on("click", () => {
   console.log("Save was triggered");
 });
 
@@ -34,9 +34,9 @@ console.log(user.get("name"));
 console.log(user.get("age"));
 
 // Tests event triggers
-user.trigger("change");
-user.trigger("save");
-user.trigger("");
+user.events.trigger("change");
+user.events.trigger("save");
+user.events.trigger("");
 
 // Add a user
 // axios.post("http://localhost:3000/users", {
