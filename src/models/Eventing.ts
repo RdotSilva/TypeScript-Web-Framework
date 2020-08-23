@@ -9,11 +9,11 @@ export class Eventing {
    * @param {Callback} callback - Callback function to add to event
    * @memberof Eventing
    */
-  on(eventName: string, callback: Callback): void {
+  on = (eventName: string, callback: Callback): void => {
     const handlers = this.events[eventName] || [];
     handlers.push(callback);
     this.events[eventName] = handlers;
-  }
+  };
 
   /**
    * Trigger all callback functions for an event
@@ -21,7 +21,7 @@ export class Eventing {
    * @returns {void}
    * @memberof Eventing
    */
-  trigger(eventName: string): void {
+  trigger = (eventName: string): void => {
     const handlers = this.events[eventName];
 
     if (!handlers || handlers.length === 0) {
@@ -31,5 +31,5 @@ export class Eventing {
     handlers.forEach((callback) => {
       callback();
     });
-  }
+  };
 }
