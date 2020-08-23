@@ -3,17 +3,22 @@ import axios from "axios";
 
 const user = new User({ name: "Ryan", age: 34 });
 
+// User on getter method test
+user.on("change", () => {
+  console.log("User was changed");
+});
+
 // Accessors example
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
+// class Person {
+//   constructor(public firstName: string, public lastName: string) {}
 
-  get fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
+//   get fullName(): string {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// }
 
-const person = new Person("Ryan", "Silva");
-console.log(person.fullName);
+// const person = new Person("Ryan", "Silva");
+// console.log(person.fullName);
 
 // Create new user with id
 // const userWithId = new User({ id: 1 });
