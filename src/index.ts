@@ -1,12 +1,14 @@
 import { User } from "./models/User";
 import axios from "axios";
 
-const user = new User({ name: "Ryan", age: 34 });
+const user = new User({ name: "Newer Name", age: 0, id: 1 });
 
 // User on getter method test
-user.on("change", () => {
-  console.log("User was changed");
+user.on("save", () => {
+  console.log(user);
 });
+
+user.save();
 
 // Accessors example
 // class Person {
