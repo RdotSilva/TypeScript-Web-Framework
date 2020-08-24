@@ -30,4 +30,8 @@ export class Model<T> {
   get trigger() {
     return this.events.trigger;
   }
+
+  get get() {
+    return this.attributes.get;
+  }
 }
