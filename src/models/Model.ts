@@ -34,4 +34,9 @@ export class Model<T> {
   get get() {
     return this.attributes.get;
   }
+
+  set(update: T): void {
+    this.attributes.set(update);
+    this.events.trigger("change");
+  }
 }
