@@ -10,4 +10,13 @@ export class Attributes<T> {
   set(update: T): void {
     Object.assign(this.data, update);
   }
+
+  /**
+   * Return all attributes
+   * @returns {T}
+   * @memberof Attributes
+   */
+  getAll(): T {
+    return this.data;
+  }
 }
