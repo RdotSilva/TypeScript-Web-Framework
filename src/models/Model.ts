@@ -22,4 +22,8 @@ export class Model<T> {
     private events: Events,
     private sync: Sync<T>
   ) {}
+
+  get on() {
+    return this.events.on;
+  }
 }
