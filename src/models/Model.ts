@@ -31,11 +31,20 @@ export class Model<T extends HasId> {
   trigger = this.events.trigger;
   get = this.attributes.get;
 
+  /**
+   * Make an update to a model
+   * @param {T} update - The update to make
+   * @memberof Model
+   */
   set(update: T): void {
     this.attributes.set(update);
     this.events.trigger("change");
   }
 
+  /**
+   * Fetch a model
+   * @memberof Model
+   */
   fetch(): void {
     const id = this.attributes.get("id");
 
@@ -48,6 +57,10 @@ export class Model<T extends HasId> {
     });
   }
 
+  /**
+   * Save a model
+   * @memberof Model
+   */
   save(): void {
     this.sync
       .save(this.attributes.getAll())
