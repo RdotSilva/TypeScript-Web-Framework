@@ -1,6 +1,11 @@
 export class UserForm {
   constructor(public parent: Element) {}
 
+  /**
+   * Hard coded template used for testing
+   * @returns {string}
+   * @memberof UserForm
+   */
   template(): string {
     return `
      <div> 
@@ -9,6 +14,10 @@ export class UserForm {
      </div>`;
   }
 
+  /**
+   * Create an HTML element out of a template and append it to the parent element
+   * @memberof UserForm
+   */
   render(): void {
     const templateElement = document.createElement("template");
     templateElement.innerHTML = this.template();
