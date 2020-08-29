@@ -24,6 +24,18 @@ export class UserForm {
      </div>`;
   }
 
+  bindEvents(fragment: DocumentFragment): void {
+    const eventsMap = this.eventsMap;
+
+    for (let eventKey in eventsMap) {
+      const [eventName, selector] = eventKey.split(":");
+
+      fragment.querySelectorAll(selector).forEach((element) => {
+        element.addEventListener(eventName, eventsMap[eventKey]);
+      });
+    }
+  }
+
   /**
    * Create an HTML element out of a template and append it to the parent element
    * @memberof UserForm
@@ -31,6 +43,8 @@ export class UserForm {
   render(): void {
     const templateElement = document.createElement("template");
     templateElement.innerHTML = this.template();
+
+    this.bindEvents(templateElement.content);
 
     this.parent.append(templateElement.content);
   }
