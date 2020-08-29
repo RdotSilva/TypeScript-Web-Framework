@@ -1,6 +1,10 @@
 export class UserForm {
   constructor(public parent: Element) {}
 
+  onButtonClick(): void {
+    console.log("Button Clicked");
+  }
+
   /**
    * Hard coded template used for testing
    * @returns {string}
