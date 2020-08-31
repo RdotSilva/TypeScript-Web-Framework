@@ -15,12 +15,21 @@ export class UserForm {
     });
   }
 
+  /**
+   * Create an event map
+   * @returns {{ [key: string]: () => void }}
+   * @memberof UserForm
+   */
   eventsMap(): { [key: string]: () => void } {
     return {
       "click:.set-age": this.onSetAgeClick,
     };
   }
 
+  /**
+   * Set a random age for the user
+   * @memberof UserForm
+   */
   onSetAgeClick = (): void => {
     this.model.setRandomAge();
   };
@@ -42,6 +51,10 @@ export class UserForm {
      </div>`;
   }
 
+  /**
+   * Bind events to a particular HTML fragment
+   * @param {DocumentFragment} fragment - HTML fragment to bind events to
+   */
   bindEvents(fragment: DocumentFragment): void {
     const eventsMap = this.eventsMap();
 
