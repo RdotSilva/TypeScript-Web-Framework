@@ -5,8 +5,12 @@ export class UserForm {
 
   eventsMap(): { [key: string]: () => void } {
     return {
-      "click:set-age": this.onSetAgeClick,
+      "click:.set-age": this.onSetAgeClick,
     };
+  }
+
+  onSetAgeClick(): void {
+    console.log("Set age button was clicked");
   }
 
   /**
