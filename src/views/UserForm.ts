@@ -27,6 +27,11 @@ export class UserForm {
     };
   }
 
+
+  /**
+   * Sets a name based user input field
+   * @memberof UserForm
+   */
   onSetNameClick = (): void => {
     const input = this.parent.querySelector('input');
     
