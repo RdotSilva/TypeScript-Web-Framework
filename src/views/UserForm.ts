@@ -1,7 +1,19 @@
 import { User } from "../models/User";
 
 export class UserForm {
-  constructor(public parent: Element, public model: User) {}
+  constructor(public parent: Element, public model: User) {
+    this.bindModel();
+  }
+
+  /**
+   * Bind model to on change event handler to re-render any time there is a change
+   * @memberof UserForm
+   */
+  bindModel(): void {
+    this.model.on("change", () => {
+      this.render();
+    });
+  }
 
   eventsMap(): { [key: string]: () => void } {
     return {
