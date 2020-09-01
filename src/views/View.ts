@@ -4,6 +4,7 @@ interface ModelForView {
   on(eventName: string, callback: () => void): void;
 }
 
+// TODO: Fix Model extension. Provide a new generic type to Model to remove errors.
 export abstract class View<T extends Model> {
   constructor(public parent: Element, public model: T) {
     this.bindModel();
