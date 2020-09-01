@@ -22,4 +22,15 @@ export abstract class View {
       });
     }
   }
+
+  render(): void {
+    this.parent.innerHTML = "";
+
+    const templateElement = document.createElement("template");
+    templateElement.innerHTML = this.template();
+
+    this.bindEvents(templateElement.content);
+
+    this.parent.append(templateElement.content);
+  }
 }
