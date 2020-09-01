@@ -5,6 +5,8 @@ export abstract class View {
     this.bindModel();
   }
 
+  abstract eventsMap(): { [key: string]: () => void };
+
   bindModel(): void {
     this.model.on("change", () => {
       this.render();
