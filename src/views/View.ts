@@ -10,4 +10,16 @@ export abstract class View {
       this.render();
     });
   }
+
+  bindEvents(fragment: DocumentFragment): void {
+    const eventsMap = this.eventsMap();
+
+    for (let eventKey in eventsMap) {
+      const [eventName, selector] = eventKey.split(":");
+
+      fragment.querySelectorAll(selector).forEach((element) => {
+        element.addEventListener(eventName, eventsMap[eventKey]);
+      });
+    }
+  }
 }
