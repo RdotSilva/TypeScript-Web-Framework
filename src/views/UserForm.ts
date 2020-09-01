@@ -23,21 +23,20 @@ export class UserForm {
   eventsMap(): { [key: string]: () => void } {
     return {
       "click:.set-age": this.onSetAgeClick,
-      "click:.set-name" this.onSetNameClick
+      "click:.set-name": this.onSetNameClick,
     };
   }
-
 
   /**
    * Sets a name based user input field
    * @memberof UserForm
    */
   onSetNameClick = (): void => {
-    const input = this.parent.querySelector('input');
-    
+    const input = this.parent.querySelector("input");
+
     if (input) {
       const name = input.value;
-      this.model.set({name});
+      this.model.set({ name });
     }
   };
 
