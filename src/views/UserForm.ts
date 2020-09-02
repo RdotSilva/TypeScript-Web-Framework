@@ -15,6 +15,10 @@ export class UserForm extends View<User, UserProps> {
     };
   }
 
+  onSaveClick = (): void => {
+    this.model.save();
+  };
+
   /**
    * Sets a name based user input field
    * @memberof UserForm
