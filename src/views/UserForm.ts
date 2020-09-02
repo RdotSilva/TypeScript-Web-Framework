@@ -46,6 +46,7 @@ export class UserForm extends View<User, UserProps> {
       <input placeholder="${this.model.get("name")}" />
       <button class="set-name">Change Name</button>
       <button class="set-age">Set random age</button>
+      <button class="save-model">Save User</button>
      </div>`;
   }
 }
