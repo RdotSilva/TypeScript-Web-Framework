@@ -11,6 +11,7 @@ export class UserForm extends View<User, UserProps> {
     return {
       "click:.set-age": this.onSetAgeClick,
       "click:.set-name": this.onSetNameClick,
+      "click:.save-model": this.onSaveClick,
     };
   }
 
