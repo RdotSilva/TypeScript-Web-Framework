@@ -48,6 +48,11 @@ export abstract class View<T extends Model<K>, K> {
     }
   }
 
+  /**
+   * Map a region to a specific element
+   * @param {DocumentFragment} fragment - Fragment to search
+   * @memberof View
+   */
   mapRegions(fragment: DocumentFragment): void {
     const regionsMap = this.regionsMap();
 
