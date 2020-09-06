@@ -5,6 +5,10 @@ export abstract class CollectionView<T, K> {
 
   abstract renderItem(model: T, itemParent: Element): void;
 
+  /**
+   * Create an element for each model and append it to the parent element
+   * @memberof CollectionView
+   */
   render(): void {
     this.parent.innerHTML = "";
 
